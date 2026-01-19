@@ -1,0 +1,40 @@
+{
+  "name": "alpine-recaptcha-form",
+  "version": "1.0.0",
+  "description": "Alpine.js form handler with Google reCAPTCHA v3 integration",
+  "main": "alpine-recaptcha-form.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alpine",
+    "alpinejs",
+    "recaptcha",
+    "form",
+    "validation",
+    "google-recaptcha",
+    "recaptcha-v3",
+    "form-handler",
+    "javascript",
+    "frontend"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/alpine-recaptcha-form.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/alpine-recaptcha-form/issues"
+  },
+  "homepage": "https://github.com/yourusername/alpine-recaptcha-form#readme",
+  "peerDependencies": {
+    "alpinejs": "^3.0.0"
+  },
+  "files": [
+    "alpine-recaptcha-form.js",
+    "alpine-recaptcha-form.min.js",
+    "README.md",
+    "LICENSE"
+  ]
+}
