@@ -138,6 +138,7 @@ Error:
 ```php
 <?php
 header('Content-Type: application/json; charset=utf-8');
+
 $data   = json_decode(file_get_contents('php://input'), true);
 $token  = $data['recaptureToken'] ?? '';
 $secret = 'YOUR_SECRET_KEY';
@@ -149,13 +150,13 @@ $response = file_get_contents(
 $result = json_decode($response);
 
 if (!$result || !$result->success) {
-    echo json_encode(['status' => 'error']);
+    echo json_encode(['status' => 0, 'errorMsg' => 'Error']);
     exit;
 }
 
 // Form processing...
 
-echo json_encode(['status' => 'success']);
+echo json_encode(['status' => 1, 'message' => 'Success']);
 
 ```
 ---
