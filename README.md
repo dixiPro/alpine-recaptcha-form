@@ -136,26 +136,28 @@ Error:
 ## 🔧 Server-Side Example (PHP)
 
 ```php
-$data = json_decode(file_get_contents('php://input'), true);
-
-$token = $data['recaptureToken'] ?? '';
+<?php
+header('Content-Type: application/json; charset=utf-8');
+$data   = json_decode(file_get_contents('php://input'), true);
+$token  = $data['recaptureToken'] ?? '';
 $secret = 'YOUR_SECRET_KEY';
 
 $response = file_get_contents(
-  "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$token"
+    "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$token"
 );
+
 $result = json_decode($response);
 
-if (!$result->success || $result->score < 0.5) {
-  echo json_encode(['status' => 0, 'errorMsg' => 'reCAPTCHA failed']);
-  exit;
+if (!$result || !$result->success) {
+    echo json_encode(['status' => 'error']);
+    exit;
 }
 
-// Process form data...
+// Form processing...
 
-echo json_encode(['status' => 1, 'message' => 'OK']);
+echo json_encode(['status' => 'success']);
+
 ```
-
 ---
 
 ## ⚙️ Requirements
